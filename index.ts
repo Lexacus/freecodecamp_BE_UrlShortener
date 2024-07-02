@@ -57,7 +57,7 @@ app
     if (!urlToFind.length) {
       const docNumber = await urlInfo.countDocuments();
       const newUrl = await urlInfo.create({
-        url: req.body.url,
+        original_url: req.body.url,
         shorturl: docNumber,
       });
       res.json(newUrl);
