@@ -58,7 +58,7 @@ app
       const docNumber = await urlInfo.countDocuments();
       const newUrl = await urlInfo.create({
         original_url: req.body.url,
-        shorturl: docNumber,
+        short_url: docNumber,
       });
       res.json(newUrl);
     }
