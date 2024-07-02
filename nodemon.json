@@ -1,6 +1,5 @@
 {
-  "watch": ["src"],
+  "watch": ["./index.ts"],
   "ext": "ts",
-  "exec": "concurrently \"npx tsc --watch\" \"ts-node src/index.ts\"",
   "pollingInterval": 1000
 }

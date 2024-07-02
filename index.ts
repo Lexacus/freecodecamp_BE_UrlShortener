@@ -12,12 +12,15 @@ app.use(cors({ optionsSuccessStatus: 200 })); // some legacy browsers choke on 2
 
 app.use(express.static("public"));
 
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
 app.get("/", (req: Request, res: Response) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-app.get("/:name", (req: Request, res: Response) => {
-  res.json({ insulto: `sei ${req.params.name}` });
+app.post("/api/shorturl", (req: Request, res: Response) => {
+  res.json({ url: req.body.url });
 });
 
 app.listen(port, () => {
